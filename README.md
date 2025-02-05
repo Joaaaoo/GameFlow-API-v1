@@ -1,4 +1,3 @@
-
 # GameFlow
 
 **GameFlow** é uma API para gerenciar um sistema de locação e venda de jogos. A aplicação utiliza tecnologias modernas como .NET 7, Entity Framework Core, Redis para caching, JWT para autenticação e MediatR para manipulação de comandos e consultas de forma escalável. O sistema é projetado para ser fácil de expandir e personalizar de acordo com as necessidades de um sistema de gerenciamento de jogos.
@@ -12,6 +11,7 @@
 - **JWT Authentication**: Autenticação via tokens JWT.
 - **Swagger**: Documentação da API para facilitar o desenvolvimento e testes.
 - **Docker**: Containerização da aplicação e do banco de dados, facilitando a configuração e o ambiente de produção.
+- **Angular**: Framework para desenvolvimento do front-end web.
 
 ## Funcionalidades
 
@@ -20,6 +20,7 @@
 - **Cache com Redis**: Armazenamento em cache para melhorar o desempenho das consultas.
 - **Migrações com EF Core**: Gerenciamento de alterações no banco de dados.
 - **API Restful**: Endpoints para CRUD (Criar, Ler, Atualizar, Deletar) de jogos.
+- **Interface Web**: Interface amigável para interação com o sistema.
 
 ## Como Rodar o Projeto
 
@@ -28,6 +29,7 @@
 - **.NET SDK 7.0** ou superior
 - **Docker** (opcional, para containerização)
 - **SQL Server** (local ou Docker)
+- **Node.js** e **npm** (para o web app Angular)
 
 ### Rodando Localmente
 
@@ -52,6 +54,25 @@
     dotnet run --project GameFlow.API
     ```
 
+### Rodando o Web App Angular
+
+1. Navegue até o diretório do web app:
+    ```bash
+    cd GameFlow-Web-App
+    ```
+
+2. Instale as dependências do projeto:
+    ```bash
+    npm install
+    ```
+
+3. Inicie o servidor de desenvolvimento:
+    ```bash
+    npm start
+    ```
+
+4. Abra o navegador e acesse `http://localhost:4200/`.
+
 ### Usando Docker
 
 Para rodar a aplicação e o banco de dados com Docker, você pode usar o `docker-compose.yml` incluído no repositório.
@@ -74,6 +95,7 @@ A API estará disponível em `https://localhost:7056`.
 - **GameFlow.Application**: Contém as lógicas de negócios, comandos e consultas (MediatR).
 - **GameFlow.Domain**: Define as entidades e regras de domínio.
 - **GameFlow.Infrastructure**: Implementa a persistência de dados, incluindo o DbContext e configurações de banco de dados.
+- **GameFlow-Web-App**: Contém o front-end web desenvolvido com Angular.
 - **Docker**: Contém arquivos necessários para containerizar a aplicação.
 
 ## Comandos de Migração
